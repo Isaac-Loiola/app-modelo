@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>reservas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-display-flex ion-flex-column ion-align-items-center gap py px">
+    <div class="w-full py-element bb">
+      <ion-text class="text-md font-bold ion-align-self-start">
+      Horário Reserva
+    </ion-text>
+      <ion-datetime color="primary"
+      min="2025-11-22"></ion-datetime>
+    </div>
+    <div class="ion-display-flex ion-flex-row ion-justify-content-between w-full bb py-element">
+        <ion-button>1</ion-button>
+        <ion-button>2</ion-button>
+        <ion-button>3</ion-button>
+        <ion-button>4</ion-button>
+        <ion-button>5</ion-button>
+        <ion-button>6</ion-button>
+    </div>
+    <ion-text class="text-md font-bold ion-align-self-start">
+      Horário Reserva
+    </ion-text>
+    <div class="w-full">
+      <ion-datetime presentation="time"></ion-datetime>
+    </div>
+    <ion-button id="reserva" class="w-full">
+        Finalizar Reserva
+    </ion-button>
+    <ion-alert
+    trigger="reserva"
+    header="Reserva Concluída!"
+    message="Sua reserva foi enviada com sucesso, entraremos em contato em breve!">
+    </ion-alert>
+  </div>
+</ion-content>
