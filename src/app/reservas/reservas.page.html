@@ -5,16 +5,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="ion-display-flex ion-flex-column ion-align-items-center gap py px">
-    <div class="w-full py-element bb">
-      <ion-text class="text-md font-bold ion-align-self-start">
+  <div class="ion-display-flex ion-flex-column ion-align-items-center gap py ion-padding px">
+    <ion-text class="text-md font-bold ion-align-self-start">
       Horário Reserva
     </ion-text>
-      <ion-datetime color="primary"
+    <ion-datetime 
+      class="w-full bb"
+      color="primary"
       presentation="date"
-      min="2025-11-22"></ion-datetime>
-    </div>
-    <div class="ion-display-flex ion-flex-row ion-justify-content-between w-full bb py-element">
+      min="2025-11-22">
+    </ion-datetime>
+    <ion-text class="text-md font-bold ion-align-self-start">
+      Numero de Pessoas
+    </ion-text>
+    <div class="ion-display-flex ion-flex-row ion-justify-content-between w-full bb py-element pb">
         <ion-button>1</ion-button>
         <ion-button>2</ion-button>
         <ion-button>3</ion-button>
@@ -25,16 +29,18 @@
     <ion-text class="text-md font-bold ion-align-self-start">
       Horário Reserva
     </ion-text>
-    <div class="w-full">
-      <ion-datetime presentation="time"></ion-datetime>
-    </div>
+
+    <ion-datetime presentation="time" class="w-full"></ion-datetime>
+
     <ion-button id="reserva" class="w-full">
         Finalizar Reserva
     </ion-button>
+
     <ion-alert
     trigger="reserva"
     header="Reserva Concluída!"
     message="Sua reserva foi enviada com sucesso, entraremos em contato em breve!">
     </ion-alert>
+
   </div>
 </ion-content>
