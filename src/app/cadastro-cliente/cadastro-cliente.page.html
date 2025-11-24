@@ -7,3 +7,50 @@
   </ion-toolbar>
 </ion-header>
  
+<!-- conteúdo da página -->
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label
+      position="stacked">
+        Nome
+      </ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label
+      position="stacked">
+        Email
+      </ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label
+      position="stacked">
+        Telefone
+      </ion-label>
+      <ion-input formControlName="telefone"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="salvar()" [disabled]="form.invalid">
+      Salvar Cliente
+    </ion-button>
+  </form>
+
+  <!-- lista de clientes cadastrados -->
+   <ion-list *ngIf="clientes.length > 0">
+    <ion-item *ngFor="let c of clientes; let i = index">
+      <ion-label>
+        {{ c.nome }} 
+        {{ c.email }}
+        {{ c.telefone }}
+      </ion-label>
+      <ion-button fill="clear" color="danger" (click)="remover(i)"></ion-button>
+    </ion-item>
+   </ion-list>
+   <ion-item *ngIf="clientes.length === 0">
+    <ion-label>
+      Nenhuma  Cliente Cadastrado
+    </ion-label>
+   </ion-item>
+</ion-content>

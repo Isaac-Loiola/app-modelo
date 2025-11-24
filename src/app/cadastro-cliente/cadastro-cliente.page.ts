@@ -48,9 +48,9 @@ export class CadastroClientePage{
       this.form.reset(); // limpa os campos do formulãrio  após salvar
     }
   }
-
-  // rermove cliente da lista
+     // rermove cliente da lista
   remover(i: number){
     this.clientes.splice(i, 1);
   }
+ 
 }
